@@ -4,8 +4,11 @@ An ML-powered tool that automatically detects and blurs spoiler-filled IMDb movi
 
 Built for **Datathon 2025**.
 
-<!-- Add your demo screenshots/GIFs below -->
-![Demo](demo.png)
+<p align="center">
+  <img src="assets/plotarmor extension.png" alt="Plot Armor popup" width="300"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/plotarmor imdb.png" alt="Blurred spoiler review on IMDb" width="450"/>
+</p>
 
 ## How It Works
 
