@@ -1,0 +1,87 @@
+/* Blur-with-label overlay applied to spoiler comments. */
+
+.plotarmor-blurred {
+  position: relative;
+}
+
+/* Blur every child EXCEPT the reveal label — otherwise the label inherits
+   pointer-events:none and can't be clicked. */
+.plotarmor-blurred > *:not(.plotarmor-label) {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+  transition: filter 0.15s ease;
+}
+
+.plotarmor-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+  font: 600 13px/1.2 system-ui, sans-serif;
+  color: #fff;
+  background: rgba(20, 20, 28, 0.55);
+  border-radius: 6px;
+  text-align: center;
+  padding: 4px 8px;
+}
+
+.plotarmor-label::before {
+  content: "🛡";
+  font-size: 15px;
+}
+
+/* Selector shape matches the blur rule's specificity so, coming later in the
+   sheet, it wins once the element also has .plotarmor-revealed. */
+.plotarmor-revealed > *:not(.plotarmor-label) {
+  filter: none;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+.plotarmor-revealed .plotarmor-label {
+  display: none;
+}
+
+/* Suppressed state — global pause (root class) or a per-show toggle. Highest
+   specificity here so it overrides both blur and manual-reveal: pausing shows
+   everything, regardless of what was individually revealed. */
+html.plotarmor-paused .plotarmor-blurred > *:not(.plotarmor-label),
+.plotarmor-off.plotarmor-blurred > *:not(.plotarmor-label) {
+  filter: none;
+  user-select: auto;
+  pointer-events: auto;
+}
+
+html.plotarmor-paused .plotarmor-label,
+.plotarmor-off .plotarmor-label {
+  display: none;
+}
+
+/* Floating "reveal all in this thread" escape hatch. */
+.plotarmor-bar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483647;
+}
+
+.plotarmor-bar-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #7c5cff;
+  color: #fff;
+  font: 600 13px/1 system-ui, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.plotarmor-bar-btn:hover {
+  background: #6a4bec;
+}

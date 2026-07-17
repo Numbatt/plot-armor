@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font: 15px/1.5 system-ui, sans-serif;
+  background: #0f0f16;
+  color: #f2f2f5;
+}
+
+.pa-options {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.pa-options h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+}
+
+.pa-options h1 .accent {
+  color: #7c5cff;
+}
+
+.pa-card {
+  background: #181822;
+  border: 1px solid #26263a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.pa-btn {
+  padding: 9px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #7c5cff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pa-btn.secondary {
+  background: #2a2a38;
+  color: #f2f2f5;
+}
+
+.pa-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #22222e;
+}
+
+.pa-show:last-child {
+  border-bottom: 0;
+}
+
+.pa-show .meta {
+  color: #9a9aa8;
+  font-size: 13px;
+}
+
+.pa-muted {
+  color: #9a9aa8;
+}

@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  width: 280px;
+  font: 14px/1.4 system-ui, sans-serif;
+  background: #14141c;
+  color: #f2f2f5;
+}
+
+.pa-popup {
+  padding: 16px;
+}
+
+.pa-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.pa-header h1 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.pa-header .accent {
+  color: #7c5cff;
+}
+
+.pa-stat {
+  font-size: 13px;
+  color: #b8b8c4;
+  margin: 4px 0;
+}
+
+.pa-stat b {
+  color: #f2f2f5;
+}
+
+.pa-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.pa-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: #7c5cff;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pa-btn.secondary {
+  background: #2a2a38;
+  color: #f2f2f5;
+}
+
+.pa-link {
+  background: none;
+  border: 0;
+  color: #7c5cff;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0;
+  margin-top: 12px;
+}
