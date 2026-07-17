@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local secrets (AniList client id, etc.) — commit .env.example instead
+.env
+.env.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
