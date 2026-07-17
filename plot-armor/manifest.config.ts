@@ -23,13 +23,15 @@ export default defineManifest({
     service_worker: "src/background/index.ts",
     type: "module",
   },
-  permissions: ["storage", "identity", "alarms"],
+  permissions: ["storage", "alarms"],
   host_permissions: [
     "https://graphql.anilist.co/",
     "https://www.reddit.com/*",
     "https://old.reddit.com/*",
-    // Classifier proxy — replaced with the real deployment in Phase 3.
-    "https://plotarmor-proxy.example.workers.dev/*",
+    // PlotArmor backend on Vercel: AniList OAuth callback page (reading the
+    // token from the redirected tab needs this host permission) and the
+    // Phase 3 classify proxy.
+    "https://plot-armor-sigma.vercel.app/*",
   ],
   content_scripts: [
     {
